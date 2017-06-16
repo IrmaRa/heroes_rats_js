@@ -20,7 +20,18 @@ Hero.prototype = {
     } else {
       this.health += food.replenishmentValue;
     }
-  }
+  },
+
+  addTask: function(task) {
+    this.tasks.push(task);
+  },
+
+  // sortByDifficulty: function(task) {
+  //   this.tasks.sort(function(task) {
+  //     return task.difficultyLevel
+  //   })
+  // }
+
 
 }
 

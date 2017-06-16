@@ -1,6 +1,8 @@
 var assert = require('assert');
 var Hero = require('../hero.js');
 var Food = require('../food.js');
+var Task = require('../task.js');
+
 
 
 describe("Hero", function() {
@@ -8,11 +10,17 @@ describe("Hero", function() {
   var hero;
   var food1;
   var food2;
+  var task1;
+  var task2;
+  var task3;
 
   beforeEach(function() {
     hero = new Hero("Billy", "pizza");
     food1 = new Food("pizza", 10);
     food2 = new Food("salad", 3);
+    task1 = new Task(10, 1, 8);
+    task2 = new Task(4, 3, 10);
+    task3 = new Task(7, 2, 3);
   });
 
   it('should have a name', function() {
@@ -44,6 +52,16 @@ describe("Hero", function() {
     hero.eat(food1);
     assert.strictEqual(15, hero.health);
   });
+
+  it('should add task', function() {
+    hero.addTask(task1);
+    assert.strictEqual(1, hero.taskCount());
+  });
+
+  // it('should sort by difficulty', function() {
+  //   hero.sortByDifficulty();
+  //   assert.strictEqual()
+  // });
 
 
   // - A hero should be able to sort their tasks by difficulty, urgency or reward.
