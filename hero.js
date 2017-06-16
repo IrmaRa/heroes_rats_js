@@ -38,7 +38,11 @@ Hero.prototype = {
     });
   },
 
-
+  sortByReward: function(tasks) {
+    this.tasks.sort(function(task1, task2) {
+      return task1.reward - task2.reward;
+    });
+  },
 
 }
 
