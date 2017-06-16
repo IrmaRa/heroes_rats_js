@@ -2,8 +2,7 @@ var assert = require('assert');
 var Hero = require('../hero.js');
 var Food = require('../food.js');
 var Task = require('../task.js');
-
-
+var Rat = require('../rat.js');
 
 describe("Hero", function() {
 
@@ -13,6 +12,7 @@ describe("Hero", function() {
   var task1;
   var task2;
   var task3;
+  var rat;
 
   beforeEach(function() {
     hero = new Hero("Billy", "pizza");
@@ -21,6 +21,7 @@ describe("Hero", function() {
     task1 = new Task(10, 1, 8);
     task2 = new Task(4, 3, 10);
     task3 = new Task(7, 2, 3);
+    rat = new Rat();
   });
 
   it('should have a name', function() {
@@ -51,6 +52,12 @@ describe("Hero", function() {
   it('should increase health by 1.5 if favourite food', function() {
     hero.eat(food1);
     assert.strictEqual(15, hero.health);
+  });
+
+  it('should be able to eat more things', function() {
+    hero.eat(food1);
+    hero.eat(food2);
+    assert.strictEqual(18, hero.health);
   });
 
   it('should add task', function() {
@@ -97,4 +104,18 @@ describe("Hero", function() {
     assert.deepEqual([task2], hero.viewTasks("incomplete"));
   });
 
+  it('should lose health if eats poisonous food', function() {
+    rat.touchFood(food2);
+    hero.eat(food2);
+    assert.strictEqual(0, hero.health);
+  });
+
+  it('should lose health if eats poisonous food', function() {
+    rat.touchFood(food2);
+    hero.eat(food1);
+    hero.eat(food2);
+    assert.strictEqual(0, hero.health);
+  });
+
 });
+
