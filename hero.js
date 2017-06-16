@@ -30,7 +30,11 @@ Hero.prototype = {
     return this.tasks.sort(function(task1, task2) {
       return task1[key] - task2[key]
     });
-  }
+  },
+
+  // viewTasks: function() {
+    
+  // }
 
 }
 
