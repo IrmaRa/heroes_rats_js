@@ -1,7 +1,7 @@
-var Hero = function(name, food) {
+var Hero = function(name, favouriteFood) {
   this.name = name;
   this.health = 0;
-  this.food = food;
+  this.favouriteFood = favouriteFood;
   this.tasks = [];
 }
 
@@ -9,9 +9,13 @@ Hero.prototype = {
   talk: function() {
     return "Hi. My name is " + this.name;
   },
-  
+
   taskCount: function() {
     return this.tasks.length;
+  },
+
+  eat: function(food) {
+    this.health += food.replenishmentValue;
   }
 
 }
