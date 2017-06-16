@@ -21,9 +21,8 @@ describe("Task", function() {
     assert.strictEqual(8, task1.reward);
   });
 
+  it('should be able to be marked as completed', function() {
+    assert.strictEqual(true, task1.complete());
+  });
+
 });
-
-
-
-// - A task has a reward
-// - A task should be able to be marked as completed
