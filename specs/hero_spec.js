@@ -25,9 +25,10 @@ describe("Hero", function() {
   it('should talk saying their name', function() {
     assert.strictEqual("Hi. My name is Billy", hero.talk());
   });
+
+  it('should have a collection of tasks to complete', function() {
+    assert.strictEqual(0, hero.taskCount());
+  });
+
 });
-
-
-// - A Hero has a collection of tasks to complete
-
 
