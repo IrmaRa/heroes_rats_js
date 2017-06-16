@@ -62,21 +62,21 @@ describe("Hero", function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    assert.deepEqual([task2, task3, task1], hero.sortTasks( "difficultyLevel" ));
+    assert.deepEqual([task2, task3, task1], hero.sortTasks("difficultyLevel"));
   });
 
   it('should sort tasks by urgency', function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    assert.deepEqual([task1, task3, task2], hero.sortTasks( "urgencyLevel" ));
+    assert.deepEqual([task1, task3, task2], hero.sortTasks("urgencyLevel"));
   });
 
   it('should sort tasks by reward', function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    assert.deepEqual([task3, task1, task2], hero.sortTasks( "reward" ));
+    assert.deepEqual([task3, task1, task2], hero.sortTasks("reward"));
   });
 
   it('should be able to view completed tasks', function() {
@@ -88,8 +88,13 @@ describe("Hero", function() {
     assert.deepEqual([task1, task3], hero.viewTasks("completed"));
   });
 
-
-  // - A hero should be able to view tasks that are marked as completed or incomplete.
+  it('should be able to view incomplete tasks', function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    task1.complete();
+    task3.complete();
+    assert.deepEqual([task2], hero.viewTasks("incomplete"));
+  });
 
 });
-
