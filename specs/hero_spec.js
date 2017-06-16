@@ -79,9 +79,15 @@ describe("Hero", function() {
     assert.deepEqual([task3, task1, task2], hero.sortTasks( "reward" ));
   });
 
-  // it('should be able to view tasks if completed or not', function() {
-    
-  // });
+  it('should be able to view completed tasks', function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    task1.complete();
+    task3.complete();
+    assert.deepEqual([task1, task3], hero.viewTasks("completed"));
+  });
+
 
   // - A hero should be able to view tasks that are marked as completed or incomplete.
 

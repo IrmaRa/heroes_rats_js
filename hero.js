@@ -26,15 +26,17 @@ Hero.prototype = {
     this.tasks.push(task);
   },
 
-  sortTasks: function( key ) {
+  sortTasks: function(key) {
     return this.tasks.sort(function(task1, task2) {
-      return task1[key] - task2[key]
+      return task1[key] - task2[key];
     });
   },
 
-  // viewTasks: function() {
-    
-  // }
+  viewTasks: function(status) {
+    return this.tasks.filter(function(task) {
+      return task.completedStatus === status;
+    });
+  }
 
 }
 

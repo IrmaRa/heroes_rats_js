@@ -2,12 +2,12 @@ var Task = function(difficultyLevel, urgencyLevel, reward) {
   this.difficultyLevel = difficultyLevel;
   this.urgencyLevel = urgencyLevel;
   this.reward = reward;
-  this.completedStatus = false;
+  this.completedStatus = "incomplete";
 }
 
 Task.prototype = {
-  complete: function(task) {
-    return this.completedStatus = true;
+  complete: function() {
+    return this.completedStatus = "completed";
   }
 }
 
