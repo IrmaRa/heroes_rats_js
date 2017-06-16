@@ -26,23 +26,11 @@ Hero.prototype = {
     this.tasks.push(task);
   },
 
-  sortByDifficulty: function(tasks) {
-    this.tasks.sort(function(task1, task2) {
-      return task1.difficultyLevel - task2.difficultyLevel;
+  sortTasks: function( key ) {
+    return this.tasks.sort(function(task1, task2) {
+      return task1[key] - task2[key]
     });
-  },
-
-  sortByUrgency: function(tasks) {
-    this.tasks.sort(function(task1, task2) {
-      return task1.urgencyLevel - task2.urgencyLevel;
-    });
-  },
-
-  sortByReward: function(tasks) {
-    this.tasks.sort(function(task1, task2) {
-      return task1.reward - task2.reward;
-    });
-  },
+  }
 
 }
 

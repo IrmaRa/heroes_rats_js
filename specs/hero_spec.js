@@ -58,35 +58,28 @@ describe("Hero", function() {
     assert.strictEqual(1, hero.taskCount());
   });
 
-  it('should sort by difficulty', function() {
+  it('should sort tasks by difficulty', function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    hero.sortByDifficulty();
-    assert.deepEqual([task2, task3, task1], hero.tasks);
+    assert.deepEqual([task2, task3, task1], hero.sortTasks( "difficultyLevel" ));
   });
 
-  it('should sort by urgency', function() {
+  it('should sort tasks by urgency', function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    hero.sortByUrgency();
-    assert.deepEqual([task1, task3, task2], hero.tasks);
+    assert.deepEqual([task1, task3, task2], hero.sortTasks( "urgencyLevel" ));
   });
 
-  it('should sort by reward', function() {
+  it('should sort tasks by reward', function() {
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    hero.sortByReward();
-    assert.deepEqual([task3, task1, task2], hero.tasks);
+    assert.deepEqual([task3, task1, task2], hero.sortTasks( "reward" ));
   });
 
 
-
-
-
-  // - A hero should be able to sort their tasks by difficulty, urgency or reward.
   // - A hero should be able to view tasks that are marked as completed or incomplete.
 
 });
