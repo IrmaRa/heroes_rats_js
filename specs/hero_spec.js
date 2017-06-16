@@ -37,12 +37,15 @@ describe("Hero", function() {
 
   it('should eat and health should go up', function() {
     hero.eat(food2);
-    assert(3, hero.health);
+    assert.strictEqual(3, hero.health);
+  });
+
+  it('should increase health by 1.5 if favourite food', function() {
+    hero.eat(food1);
+    assert.strictEqual(15, hero.health);
   });
 
 
-  // - A hero should be able to eat food, and health should go up by the replenishment value
-  // - If the food is their favourite food, their health should go up by 1.5 * value.
   // - A hero should be able to sort their tasks by difficulty, urgency or reward.
   // - A hero should be able to view tasks that are marked as completed or incomplete.
 
