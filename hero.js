@@ -4,4 +4,10 @@ var Hero = function(name, food) {
   this.food = food;
 }
 
+Hero.prototype = {
+  talk: function() {
+    return "Hi. My name is " + this.name;
+  }
+}
+
 module.exports = Hero;

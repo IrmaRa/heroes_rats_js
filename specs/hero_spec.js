@@ -20,12 +20,14 @@ describe("Hero", function() {
 
   it('should have favourite food', function() {
     assert.strictEqual("pizza", hero.food);
-  })
+  });
+
+  it('should talk saying their name', function() {
+    assert.strictEqual("Hi. My name is Billy", hero.talk());
+  });
 });
 
 
-
-// - A Hero can talk saying their name
 // - A Hero has a collection of tasks to complete
 
 
