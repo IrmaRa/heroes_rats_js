@@ -58,10 +58,13 @@ describe("Hero", function() {
     assert.strictEqual(1, hero.taskCount());
   });
 
-  // it('should sort by difficulty', function() {
-  //   hero.sortByDifficulty();
-  //   assert.strictEqual()
-  // });
+  it('should sort by difficulty', function() {
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    hero.sortByDifficulty();
+    assert.deepEqual([task2, task3, task1], hero.tasks);
+  });
 
 
   // - A hero should be able to sort their tasks by difficulty, urgency or reward.

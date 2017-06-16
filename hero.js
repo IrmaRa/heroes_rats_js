@@ -26,11 +26,11 @@ Hero.prototype = {
     this.tasks.push(task);
   },
 
-  // sortByDifficulty: function(task) {
-  //   this.tasks.sort(function(task) {
-  //     return task.difficultyLevel
-  //   })
-  // }
+  sortByDifficulty: function(tasks) {
+    this.tasks.sort(function(task1, task2) {
+      return task1.difficultyLevel - task2.difficultyLevel;
+    });
+  }
 
 
 }
