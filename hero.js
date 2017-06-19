@@ -40,6 +40,7 @@ Hero.prototype = {
     });
   }
 
+
 }
 
 module.exports = Hero;

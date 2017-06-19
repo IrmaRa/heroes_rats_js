@@ -19,6 +19,4 @@ describe("Rat", function() {
     assert.strictEqual(true, food.poisonous);
   });
 
-
 });
-
